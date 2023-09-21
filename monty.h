@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -7,6 +8,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
+
 /**
  * struct stack_s - The doubly linked list representation of a stack or a queue
  * @n: Given integer
@@ -22,6 +24,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
 /**
  * struct bus_s -All variables -args, file, line content
  * @arg: Given value
@@ -30,6 +33,7 @@ typedef struct stack_s
  * @lifi: The flag change stack ,queue
  * Description: The values through the program
  */
+
 typedef struct bus_s
 {
 	char *arg;
@@ -38,6 +42,7 @@ typedef struct bus_s
 	int lifi;
 }  bus_t;
 extern bus_t bus;
+
 /**
  * struct instruction_s - The given opcode and its function
  * @opcode: Given opcode
@@ -50,6 +55,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
@@ -74,4 +80,5 @@ void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
-#endif
+
+#endif /* MONTY_H */
