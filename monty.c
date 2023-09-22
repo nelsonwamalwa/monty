@@ -1,4 +1,7 @@
 #include "monty.h"
+
+vars *first;
+
 /**
  * main - Entry Point
  * description: main
@@ -9,8 +12,6 @@
 
 int main(int argc, char **argv)
 {
-	vars *frist;
-
 	first = malloc(sizeof(vars));
 	if (!first)
 	{
