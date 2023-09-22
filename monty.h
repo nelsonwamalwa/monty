@@ -67,7 +67,6 @@ void f_free_stack(stack_tt *stack);
 stack_tt *f_add_dnodeint_end(stack_tt **head, const int n);
 int f_opcode_finder(stack_tt **stack, char *linebuff, unsigned int counter);
 int f_opcode_loop(char **argv);
-size_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 /*== Other Prototype functions ==*/
 int f_tokenize(stack_tt **stack, char *line, unsigned int counter);

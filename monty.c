@@ -53,7 +53,7 @@ int f_opcode_loop(char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	characters = _getline(&linebuff, &buffsize, fp);
+	characters = getline(&linebuff, &buffsize, fp);
 
 	while (characters >= 0)
 	{
@@ -70,7 +70,7 @@ int f_opcode_loop(char **argv)
 		if (first->f_error_code == -1)
 			break;
 
-	    characters = _getline(&linebuff, &buffsize, fp);
+	    characters = getline(&linebuff, &buffsize, fp);
 	}
 	err = first->f_error_code;
 	fclose(fp);
