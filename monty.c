@@ -1,9 +1,6 @@
 #include "monty.h"
-
-vars *first;
-
 /**
- * main - main
+ * main - Entry Point
  * description: main
  * @argc: argc
  * @argv: argv
@@ -12,6 +9,8 @@ vars *first;
 
 int main(int argc, char **argv)
 {
+	vars *frist;
+
 	first = malloc(sizeof(vars));
 	if (!first)
 	{
@@ -30,7 +29,7 @@ int main(int argc, char **argv)
 }
 
 /**
- * opcode_loop - interpreter
+ * f_opcode_loop - interpreter
  * description: this takes input
  * @argv: argv
  * Return: 0
@@ -40,11 +39,10 @@ int f_opcode_loop(char **argv)
 {
 	stack_tt *stack = NULL;
 	unsigned int counter = 0;
-	int i, err;
+	int characters, i, err;
 	char *linebuff = NULL;
 	size_t buffsize;
-    ssize_t characters;
-	FILE *fp = fopen(argv[1], "r");
+FILE *fp = fopen(argv[1], "r");
 
 	if (!fp)
 	{
@@ -52,9 +50,7 @@ int f_opcode_loop(char **argv)
 		free(first);
 		exit(EXIT_FAILURE);
 	}
-
 	characters = getline(&linebuff, &buffsize, fp);
-
 	while (characters >= 0)
 	{
 		for (i = 0; linebuff[i] != '\0'; i++)
@@ -69,7 +65,6 @@ int f_opcode_loop(char **argv)
 		linebuff = NULL;
 		if (first->f_error_code == -1)
 			break;
-
 	    characters = getline(&linebuff, &buffsize, fp);
 	}
 	err = first->f_error_code;
@@ -84,8 +79,8 @@ int f_opcode_loop(char **argv)
 }
 
 /**
- * tokenize - tokenize
- * description: tokenize
+ * f_tokenize - tokenizes
+ * description: tokenizes
  * @line: line
  * @stack: dbl ptr to stack
  * @counter: ln count for errors
@@ -124,14 +119,13 @@ int f_tokenize(stack_tt **stack, char *line, unsigned int counter)
 
 
 /**
- * opcode_finder - finds proper opcode
+ * f_opcode_finder - finds proper op-code
  * description: str compares opcode for correlating func
  * @stack: dbl ptr to stack
  * @linebuff: linebuff
- * @counter: ln count for errors
+ * @counter: Count for errors
  * Return: 0 or 1
  */
-
 
 int f_opcode_finder(stack_tt **stack, char *linebuff, unsigned int counter)
 {

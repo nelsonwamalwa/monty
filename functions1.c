@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
-s * pushit - push element to the stack
- * description: adds element to the stack
+s * f_pushit - Push element to the stack
+ * description: push element to the stack
  * @stack: dbl ptr to a stack
- * @line_number: ln count for error
- * Return: void
+ * @counter: Count for error
+ * Return: Always 0 (Success)
  */
 
 void f_pushit(stack_tt **stack, unsigned int counter)

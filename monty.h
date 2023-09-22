@@ -58,6 +58,8 @@ typedef struct instruction_s
 	void (*f)(stack_tt **stack, unsigned int counter);
 } instruction_tt;
 
+vars *first;
+
 /*== prototype functions ==*/
 size_t f_print_q(const stack_tt *h);
 size_t f_stack_len(const stack_tt *h);
