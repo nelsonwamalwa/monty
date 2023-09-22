@@ -1,8 +1,8 @@
 #include "monty.h"
 
-vars *frist;
+vars *first;
 /**
- * main - main
+ * main - Entry Point
  * description: main
  * @argc: argc
  * @argv: argv
