@@ -2,7 +2,7 @@
 
 vars *frist;
 /**
- * main - Entry Point
+ * main - main
  * description: main
  * @argc: argc
  * @argv: argv
