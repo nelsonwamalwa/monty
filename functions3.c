@@ -1,13 +1,11 @@
 #include "monty.h"
 
 /**
- * modit - modulus of top values
- * description: remaider of second to top value divided by top value
- * becomes second to top value and top of stack is popped
- *
- * @stack: dbl ptr to a stack
- * @counter: ln count for errors
- * Return: void
+ * f_modit - Modulus of top values in stack
+ * description: Remaider of second to top divided by top
+ * @stack: Pointer to a stack
+ * @counter: Count for errors
+ * Return: void(NULL)
  */
 
 void f_modit(stack_tt **stack, unsigned int counter)
@@ -37,11 +35,11 @@ void f_modit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * pcharit - prints a value
- * description: prints value at top of stack
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_pcharit - Prints a chars value
+ * description: Prints value at top of stack lists
+ * @stack: Pointer to stack
+ * @Counter: Count for errors
+ * Return: void(NULL)
  */
 void f_pcharit(stack_tt **stack, unsigned int counter)
 {
@@ -72,11 +70,11 @@ void f_pcharit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * pstrit - print the string at the top of the stack
- * decription: prints the ascii of an int
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_pstrit - Print the string at the top of the stack
+ * decription: Prints the ascii of an int value
+ * @stack: Point to stack
+ * @Counter: Count for errors
+ * Return: void(NULL)
  */
 void f_pstrit(stack_tt **stack, unsigned int counter)
 {
@@ -105,11 +103,11 @@ void f_pstrit(stack_tt **stack, unsigned int counter)
 
 
 /**
- * rotlit - rotates the stack to the top
- * description: top element of the stack becomes the last one
- * @stack: dbl ptr to a stack
- * @line_number: ln count for error
- * Return: void
+ * f_rotlit - Rotates the stack to top
+ * description: Any top element of the stack becomes the last
+ * @stack: Pointer to a stack
+ * @Counter: Count for error
+ * Return: Void(NULL)
  */
 
 void f_rotlit(stack_tt **stack, unsigned int counter)
@@ -138,11 +136,11 @@ void f_rotlit(stack_tt **stack, unsigned int counter)
 
 
 /**
- * rotrit - rotates the stack to the bottom
- * description: last element of the stack becomes the top one
- * @stack: dbl ptr to a stack
- * @line_number: ln count for error
- * Return: void
+ * f_rotrit - Rotate the stack to the bottom of list
+ * description: Any last element of the stack becomes the top
+ * @stack: Pointer to a stack
+ * @Counter: Count for error
+ * Return: Void(NULL)
  */
 
 void f_rotrit(stack_tt **stack, unsigned int counter)

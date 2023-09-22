@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-s * f_pushit - Push element to the stack
- * description: push element to the stack
- * @stack: dbl ptr to a stack
+s * f_pushit - Push element into the stack
+ * description: push element into the stack
+ * @stack: Pointer to a stack
  * @counter: Count for error
  * Return: Always 0 (Success)
  */
@@ -38,11 +38,11 @@ void f_pushit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * pallit - print all
- * decription: prints linked list backwards
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_pallit - Print in reverse
+ * decription: prints linked list in reverse
+ * @stack: Pointer to stack
+ * @counter: Count for errors
+ * Return: void(NULL)
  */
 void f_pallit(stack_tt **stack, unsigned int counter)
 {
@@ -60,11 +60,11 @@ void f_pallit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * pintit - prints a value
- * description: prints value at top of stack
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_pintit - Prints a value from the stack
+ * description: Prints value at top
+ * @stack: Pointer to stack
+ * @counter: Count for errors
+ * Return: void(NULL)
  */
 void f_pintit(stack_tt **stack, unsigned int counter)
 {
@@ -83,11 +83,11 @@ void f_pintit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * popit - pops an element off the stack
- * description: removes top element
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_popit - Pops an element off the stack
+ * description: Removes top element from stack
+ * @stack: Pointer to stack
+ * @counter: Count for errors
+ * Return: void(NULL)
  */
 
 void f_popit(stack_tt **stack, unsigned int counter)
@@ -115,11 +115,11 @@ void f_popit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * swapit - swaps elements
- * description: swaps top two elements in stack
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_swapit - Swaps elements in stack
+ * description: Switches the top two elements in stack
+ * @stack: Pointer to stack
+ * @counter: Count for errors
+ * Return: void(NULL)
  */
 
 void f_swapit(stack_tt **stack, unsigned int counter)

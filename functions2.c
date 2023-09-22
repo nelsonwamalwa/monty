@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * addit - adds data
- * description: adds the value from top two elements
+ * f_addit - Adds data in stack
+ * description: Adds data in stack
  * @stack: dbl ptr to a stack
  * @line_number: ln count for errors
  * Return: void
@@ -29,11 +29,11 @@ void f_addit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * nope - nop opcode
- * description: doesn't do a thing
- * @stack: dbl ptr to stack
- * @line_number: ln count for errors
- * Return: void
+ * f_nope - Does nothing on opcode
+ * description: none
+ * @stack: Pointer to stack
+ * @counter: Count for errors
+ * Return: void(NULL)
  */
 void f_nope(stack_tt **stack, unsigned int counter)
 {
@@ -43,11 +43,11 @@ void f_nope(stack_tt **stack, unsigned int counter)
 }
 
 /**
-* subit - adds data
-* description: adds the value from top two elements
-* @stack: dbl ptr to a stack
-* @line_number: ln count for errors
-* Return: void
+* f_subit - Subtracts data from stack
+* description: Subtracts data from the stack
+* @stack: Pointer to a stack
+* @counter: Count for errors
+* Return: void(NULL)
 */
 
 void f_subit(stack_tt **stack, unsigned int counter)
@@ -71,10 +71,10 @@ void f_subit(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * mullet - multiplies top two numbers and pop top of stack
- * @stack: head of stack
- * @line_number: line number in file
- * Return: void
+ * f_mullet - Multiplies top two numbers and pop top of stack
+ * @stack: Pointer to the head of stack
+ * @counter: index of line in file
+ * Return: void(NULL)
  */
 
 void f_mullet(stack_tt **stack, unsigned int counter)
@@ -98,11 +98,11 @@ void f_mullet(stack_tt **stack, unsigned int counter)
 }
 
 /**
- * divit - adds data
- * description: divides the value from top two elements
- * @stack: dbl ptr to a stack
- * @line_number: ln count for errors
- * Return: void
+ * f_divit - Divides data in stack
+ * description: Divides the value from top two elements in stack
+ * @stack: Pointer to a stack
+ * @line_number: Count for errors
+ * Return: void(NULL)
  */
 
 void f_divit(stack_tt **stack, unsigned int counter)

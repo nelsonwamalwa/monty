@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * print_q - prints queue
- * @h: list to print
- * Return: number of nodes
+ * f_print_q - Prints the queue
+ * @h: list to printed queue
+ * Return: Number of the nodes
  */
 
 size_t f_print_q(const stack_tt *h)
@@ -18,7 +18,7 @@ size_t f_print_q(const stack_tt *h)
 }
 
 /**
- * stack_len - returns length of list
+ * f_stack_len - Returns length of list in a node
  * @h: list
  * Return: length of list
  */
@@ -33,10 +33,10 @@ size_t f_stack_len(const stack_tt *h)
 }
 
 /**
- * add_stackstart - add node to beginning of linked list
+ * f_add_stackstart - push node to beginning of linked list
  * @head: head of linked list
  * @n: value of node
- * Return: pointer to node or NULL
+ * Return: pointer or NULL
  */
 
 stack_tt *f_add_stackstart(stack_tt **head, const int n)
@@ -61,10 +61,10 @@ stack_tt *f_add_stackstart(stack_tt **head, const int n)
 }
 
 /**
- * push_stack - adds node to end
+ * f_push_stack - Pushes node to end
  * @head: head of linked list
  * @n: value to put into node
- * Return: pointer to node or NULL
+ * Return: Pointer or NULL
  */
 
 stack_tt *f_push_stack(stack_tt **head, const int n)
@@ -94,9 +94,9 @@ stack_tt *f_push_stack(stack_tt **head, const int n)
 }
 
 /**
- * free_stack - frees doubly linked list
- * @stack: dbl ptr to stack
- * Return: null
+ * f_free_stack - Frees doubly linked list in stack
+ * @stack: Pointer to stack
+ * Return: Void(null)
  */
 
 void f_free_stack(stack_tt *stack)

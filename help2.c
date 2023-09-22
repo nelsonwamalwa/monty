@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- * add_dnodeint_end - add node
- * description: adds a node at the end of a list
- * @head: first node
- * @n: data for new node
+ * f_add_dnodeint_end - Add node to the list
+ * description: Adds a node at the end of linked list
+ * @head: header node
+ * @n: New node data
  * Return: address or NULL
  */
 

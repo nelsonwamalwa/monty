@@ -1,6 +1,7 @@
 #include "monty.h"
 
 vars *first;
+
 /**
  * main - Entry Point
  * description: main
@@ -30,8 +31,8 @@ int main(int argc, char **argv)
 }
 
 /**
- * f_opcode_loop - interpreter
- * description: this takes input
+ * f_opcode_loop - interpret
+ * description: Takes the input
  * @argv: argv
  * Return: 0
  */
@@ -40,7 +41,7 @@ int f_opcode_loop(char **argv)
 {
 	stack_tt *stack = NULL;
 	unsigned int counter = 0;
-	int characters, i, err;
+	int chars, i, err;
 	char *linebuff = NULL;
 	size_t buffsize;
 FILE *fp = fopen(argv[1], "r");
@@ -51,8 +52,8 @@ FILE *fp = fopen(argv[1], "r");
 		free(first);
 		exit(EXIT_FAILURE);
 	}
-	characters = getline(&linebuff, &buffsize, fp);
-	while (characters >= 0)
+	chars = getline(&linebuff, &buffsize, fp);
+	while (chars >= 0)
 	{
 		for (i = 0; linebuff[i] != '\0'; i++)
 		{
@@ -66,7 +67,7 @@ FILE *fp = fopen(argv[1], "r");
 		linebuff = NULL;
 		if (first->f_error_code == -1)
 			break;
-	    characters = getline(&linebuff, &buffsize, fp);
+	    chars = getline(&linebuff, &buffsize, fp);
 	}
 	err = first->f_error_code;
 	fclose(fp);
@@ -80,32 +81,32 @@ FILE *fp = fopen(argv[1], "r");
 }
 
 /**
- * f_tokenize - tokenizes
- * description: tokenizes
+ * f_tokenize - Tokenizes
+ * description: Tokenizes
  * @line: line
- * @stack: dbl ptr to stack
- * @counter: ln count for errors
- * Return: 0
+ * @stack: Pointer to stack
+ * @counter: Count for errors
+ * Return: Always 0 (Success)
  */
 
 int f_tokenize(stack_tt **stack, char *line, unsigned int counter)
 {
-	char *linebuff = NULL, *nbuff = NULL;
-	int b = 0;
+	char *linebuff = NULL, *xbuff = NULL;
+	int count = 0;
 
 	linebuff = strtok(line, " ");
 	if (!linebuff)
 	{
 		return (0);
 	}
-	nbuff = linebuff;
-	nbuff = strtok(NULL, " ");
-	if (nbuff != NULL)
+	xbuff = linebuff;
+	xbuff = strtok(NULL, " ");
+	if (xbuff != NULL)
 	{
-		first->n = atoi(nbuff);
-		b = f_opcode_finder(stack, linebuff, counter);
+		first->n = atoi(xbuff);
+		count = f_opcode_finder(stack, linebuff, counter);
 	}
-	else if (b != 1)
+	else if (count != 1)
 	{
 		if (strcmp(linebuff, "push") == 0)
 		{
@@ -113,26 +114,26 @@ int f_tokenize(stack_tt **stack, char *line, unsigned int counter)
 			first->f_error_code = -1;
 			return (-1);
 		}
-			b = f_opcode_finder(stack, linebuff, counter);
+			count = f_opcode_finder(stack, linebuff, counter);
 	}
 	return (1);
 }
 
 
 /**
- * f_opcode_finder - finds proper op-code
- * description: str compares opcode for correlating func
- * @stack: dbl ptr to stack
- * @linebuff: linebuff
+ * f_opcode_finder - Finds proper op-code
+ * description: Compares opcode for correlating functions
+ * @stack: Pointer to stack
+ * @linebuff: line-buffer
  * @counter: Count for errors
- * Return: 0 or 1
+ * Return: Always 0 (Success) or 1 on error
  */
 
 int f_opcode_finder(stack_tt **stack, char *linebuff, unsigned int counter)
 {
 	int i;
 
-	instruction_tt arr[] = {
+	instruction_tt a[] = {
 		{"push", f_pushit}, {"pall", f_pallit},
 		{"pint", f_pintit}, {"pop", f_popit},
 		{"swap", f_swapit}, {"add", f_addit},
@@ -146,16 +147,16 @@ int f_opcode_finder(stack_tt **stack, char *linebuff, unsigned int counter)
 
 	if (linebuff != NULL)
 	{
-		for (i = 0; arr[i].f; i++)
+		for (i = 0; a[i].f; i++)
 		{
-			if (strcmp(linebuff, arr[i].f_opcode) == 0)
+			if (strcmp(linebuff, a[i].f_opcode) == 0)
 			{
-				arr[i].f(stack, counter);
+				a[i].f(stack, counter);
 				return (1);
 			}
 			else if (linebuff[0] == '#')
 			{
-				arr[11].f(stack, counter);
+				a[11].f(stack, counter);
 				return (1);
 			}
 		}
